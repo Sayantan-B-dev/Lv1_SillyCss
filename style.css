@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+}
+
+.scene {
+    width: 200px;
+    height: 200px;
+    perspective: 600px;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position:sticky;
+    transform-style:preserve-3d;
+    animation: rotate 5s infinite linear;
+}
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    background-image:url("./me.jpg");
+    background-size:contain;
+    border: 1px dotted rgb(255, 255, 255);
+}
+
+.front {
+    transform: translateZ(200px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(200px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(50px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(50px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(150px);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(720deg);
+    }
+
+    to {
+        transform: rotateY(0deg);
+    }
+}
